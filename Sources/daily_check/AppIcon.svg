@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <!-- 主渐变背景 -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A90E2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7B68EE;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- 卡片阴影 -->
+    <filter id="cardShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="20"/>
+      <feOffset dx="0" dy="10" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- 勾选标记阴影 -->
+    <filter id="checkShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
+      <feOffset dx="0" dy="4" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.4"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- 圆角矩形背景 -->
+  <rect x="0" y="0" width="1024" height="1024" rx="220" ry="220" fill="url(#bgGradient)"/>
+
+  <!-- 装饰性光晕 -->
+  <circle cx="250" cy="250" r="180" fill="white" opacity="0.1"/>
+  <circle cx="800" cy="750" r="150" fill="white" opacity="0.08"/>
+
+  <!-- 日历/任务卡片 -->
+  <g filter="url(#cardShadow)">
+    <rect x="180" y="220" width="664" height="584" rx="40" ry="40" fill="white"/>
+  </g>
+
+  <!-- 卡片顶部装饰条 -->
+  <rect x="180" y="220" width="664" height="120" rx="40" ry="40" fill="white"/>
+  <rect x="180" y="280" width="664" height="60" fill="white"/>
+  <rect x="220" y="245" width="584" height="8" rx="4" ry="4" fill="#E8E8ED"/>
+  <rect x="220" y="275" width="400" height="8" rx="4" ry="4" fill="#E8E8ED"/>
+  <rect x="220" y="305" width="300" height="8" rx="4" ry="4" fill="#E8E8ED"/>
+
+  <!-- 任务列表项 -->
+  <!-- 任务1 - 已完成 -->
+  <g transform="translate(240, 380)">
+    <rect x="0" y="0" width="544" height="80" rx="16" ry="16" fill="#F5F7FA"/>
+    <circle cx="40" cy="40" r="24" fill="#4CD964"/>
+    <path d="M 28 40 L 36 48 L 52 32" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <rect x="84" y="28" width="280" height="12" rx="6" ry="6" fill="#3C3C43" opacity="0.6"/>
+    <rect x="84" y="48" width="160" height="8" rx="4" ry="4" fill="#3C3C43" opacity="0.3"/>
+  </g>
+
+  <!-- 任务2 - 已完成 -->
+  <g transform="translate(240, 480)">
+    <rect x="0" y="0" width="544" height="80" rx="16" ry="16" fill="#F5F7FA"/>
+    <circle cx="40" cy="40" r="24" fill="#4CD964"/>
+    <path d="M 28 40 L 36 48 L 52 32" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <rect x="84" y="28" width="220" height="12" rx="6" ry="6" fill="#3C3C43" opacity="0.6"/>
+    <rect x="84" y="48" width="180" height="8" rx="4" ry="4" fill="#3C3C43" opacity="0.3"/>
+  </g>
+
+  <!-- 任务3 - 未完成 -->
+  <g transform="translate(240, 580)">
+    <rect x="0" y="0" width="544" height="80" rx="16" ry="16" fill="#F5F7FA"/>
+    <circle cx="40" cy="40" r="24" fill="none" stroke="#C7C7CC" stroke-width="3"/>
+    <rect x="84" y="28" width="300" height="12" rx="6" ry="6" fill="#3C3C43" opacity="0.6"/>
+    <rect x="84" y="48" width="140" height="8" rx="4" ry="4" fill="#3C3C43" opacity="0.3"/>
+  </g>
+
+  <!-- 大勾选标记 - 表示打卡完成 -->
+  <g filter="url(#checkShadow)" transform="translate(680, 180)">
+    <circle cx="80" cy="80" r="90" fill="#FFD700"/>
+    <circle cx="80" cy="80" r="90" fill="url(#goldGradient)"/>
+    <path d="M 45 80 L 70 105 L 115 55" stroke="white" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFA500;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- 火焰连续打卡图标 -->
+  <g transform="translate(140, 680)">
+    <path d="M 40 70 Q 40 50 55 35 Q 60 30 60 20 Q 60 10 55 5 Q 70 20 75 35 Q 80 45 75 60 Q 70 75 55 80 Q 40 80 40 70 Z" fill="#FF6B35" opacity="0.9"/>
+    <path d="M 48 65 Q 48 55 55 45 Q 58 42 58 35 Q 68 45 65 58 Q 62 68 55 70 Q 48 70 48 65 Z" fill="#FFD700"/>
+  </g>
+</svg>
