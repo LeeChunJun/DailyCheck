@@ -9,7 +9,7 @@
 	<key>CFBundleExecutable</key>
 	<string>daily_check</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.example.aicreate</string>
+	<string>com.example.daily-check</string>
 	<key>CFBundleIconFile</key>
 	<string>AppIcon</string>
 	<key>CFBundleInfoDictionaryVersion</key>
