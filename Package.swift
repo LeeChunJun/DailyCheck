@@ -12,13 +12,13 @@ let package = Package(
         // An xtool project should contain exactly one library product,
         // representing the main app.
         .library(
-            name: "daily_check",
-            targets: ["daily_check"]
+            name: "DailyCheck",
+            targets: ["DailyCheck"]
         ),
     ],
     targets: [
         .target(
-            name: "daily_check",
+            name: "DailyCheck",
             resources: [.process("Assets.xcassets")]
         ),
     ]
